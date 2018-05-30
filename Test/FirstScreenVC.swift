@@ -1,25 +1,30 @@
 //
-//  ViewController.swift
+//  FirstScreenVC.swift
 //  Test
 //
-//  Created by Admin on 25/05/2018.
+//  Created by Admin on 28/05/2018.
 //  Copyright © 2018 Admin. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class FirstScreenVC: UIViewController {
 
+    @IBOutlet weak var authButton: CustomButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+      
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
 
 
 }
-

@@ -1,95 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="a97-7O-J04">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="SFUIText-Medium.otf">
             <string>SFUIText-Medium</string>
         </array>
+        <array key="SFUIText-Regular.otf">
+            <string>SFUIText-Regular</string>
+        </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--First ScreenVC-->
         <scene sceneID="t7f-t3-WLd">
             <objects>
-                <viewController id="N5p-Gs-QNA" sceneMemberID="viewController">
+                <viewController id="N5p-Gs-QNA" customClass="FirstScreenVC" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="va8-4O-Vr7"/>
                         <viewControllerLayoutGuide type="bottom" id="NIU-pK-NCN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iPx-4G-5FQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IP-DY-ulp">
-                                <rect key="frame" x="141" y="318" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IP-DY-ulp" customClass="CustomButton" customModule="Test" customModuleProvider="target">
+                                <rect key="frame" x="133.66666666666669" y="346" width="147.00000000000006" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6yG-pe-Oet"/>
+                                    <constraint firstAttribute="width" constant="147" id="8MX-QL-Hsm"/>
+                                </constraints>
                                 <state key="normal" title="Авторизация"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="x0B-di-Wgs"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="33b-u0-jEf"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8IP-DY-ulp" firstAttribute="centerX" secondItem="iPx-4G-5FQ" secondAttribute="centerX" id="FwU-Eb-Mjp"/>
+                            <constraint firstItem="8IP-DY-ulp" firstAttribute="centerY" secondItem="iPx-4G-5FQ" secondAttribute="centerY" id="PXL-At-brS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NvU-Sv-u6W"/>
+                    <connections>
+                        <outlet property="authButton" destination="8IP-DY-ulp" id="GUx-7J-dgf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nPj-q4-p4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="148" y="30.134932533733135"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignUpViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIX-Ap-fSk" customClass="CustomTextField" customModule="Test" customModuleProvider="target">
-                                <rect key="frame" x="24" y="274" width="327" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GND-oX-cta" customClass="CustomTextField" customModule="Test" customModuleProvider="target">
-                                <rect key="frame" x="24" y="361" width="327" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xf-6p-1MB" customClass="CustomButton" customModule="Test" customModuleProvider="target">
-                                <rect key="frame" x="159" y="449" width="56" height="34"/>
-                                <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI  Text" pointSize="18"/>
-                                <state key="normal" title="Войти"/>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wjt-qt-L6m">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ClV-Pq-IdW">
+                                        <rect key="frame" x="0.0" y="-64" width="414" height="672"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIX-Ap-fSk" customClass="CustomTextField" customModule="Test" customModuleProvider="target">
+                                                <rect key="frame" x="165" y="236" width="84" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GND-oX-cta" customClass="CustomTextField" customModule="Test" customModuleProvider="target">
+                                                <rect key="frame" x="165" y="321" width="83.666666666666657" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xf-6p-1MB" customClass="CustomButton" customModule="Test" customModuleProvider="target">
+                                                <rect key="frame" x="133.66666666666669" y="406" width="147.00000000000006" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI  Text" pointSize="15"/>
+                                                <state key="normal" title="Войти">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="submitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iTZ-Ul-e7b"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="У меня еще нет аккаунта. Создать." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDA-fE-VfM">
+                                                <rect key="frame" x="71" y="416" width="273" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="15"/>
+                                                <color key="textColor" red="0.21568627450980393" green="0.52156862745098043" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQl-jC-hRS" customClass="RestorePasswordButton" customModule="Test" customModuleProvider="target">
+                                                <rect key="frame" x="165" y="368" width="129" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="12"/>
+                                                <state key="normal" title="Забыли пароль?">
+                                                    <color key="titleColor" red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="GND-oX-cta" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="9qn-jL-GgJ"/>
-                            <constraint firstItem="8xf-6p-1MB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dte-Vd-wTS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PIX-Ap-fSk" secondAttribute="trailing" constant="8" id="G6q-C1-YSg"/>
-                            <constraint firstItem="GND-oX-cta" firstAttribute="top" secondItem="PIX-Ap-fSk" secondAttribute="bottom" constant="57" id="KFM-Xb-gS0"/>
-                            <constraint firstItem="8xf-6p-1MB" firstAttribute="top" secondItem="GND-oX-cta" secondAttribute="bottom" constant="58" id="P6E-Z8-oUA"/>
-                            <constraint firstItem="PIX-Ap-fSk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="Zav-EG-Od8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GND-oX-cta" secondAttribute="trailing" constant="8" id="k2w-eI-uLO"/>
-                            <constraint firstItem="PIX-Ap-fSk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="210" id="xGp-NR-o6O"/>
-                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="contentView" destination="ClV-Pq-IdW" id="kfC-o8-576"/>
+                        <outlet property="createAccountLabel" destination="lDA-fE-VfM" id="4nQ-20-y1c"/>
+                        <outlet property="emailTextField" destination="PIX-Ap-fSk" id="v84-Mh-Q2T"/>
+                        <outlet property="passwordTextField" destination="GND-oX-cta" id="FfK-jX-13t"/>
+                        <outlet property="restorePasswordButton" destination="nQl-jC-hRS" id="Wgi-B0-vcg"/>
+                        <outlet property="scrollView" destination="Wjt-qt-L6m" id="aVD-I5-esq"/>
+                        <outlet property="submitButton" destination="8xf-6p-1MB" id="de6-GC-t72"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="37.331334332833585"/>
+            <point key="canvasLocation" x="969.56521739130437" y="35.869565217391305"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XAn-7Y-yQL">

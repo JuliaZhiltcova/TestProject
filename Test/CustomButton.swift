@@ -19,34 +19,32 @@ class CustomButton: UIButton {
         super.init(frame:frame)
         setup()
     }
-    
+ 
     
     func setup(){
-        let enabledColor = UIColor.white
-        let disabledColor = enabledColor.withAlphaComponent(0.3)
-        let backgroundColor = UIColor(red: 0xFF, green: 0x9b, blue: 0x00)
+
         
-        let bthWidth = 147.0
-        let btnHeight = 44.0
-        
-        self.frame.size = CGSize(width: bthWidth, height: btnHeight)
-        
-        self.layer.cornerRadius = 28.0
+        let color = UIColor.white
+        let disabledColor = color.withAlphaComponent(0.3)
+      
+        self.backgroundColor = UIColor(red: 0xFF, green: 0x9b, blue: 0x00)
+
+       // let bthWidth = 147
+       // let btnHeight = 44
+       // self.frame.size = CGSize(width: bthWidth, height: btnHeight)
+
+
+        self.layer.cornerRadius = self.frame.height / 2
         self.clipsToBounds = true
-       // self.layer.borderWidth = 3.0
+       
         
-        //self.layer.borderColor = enabledColor.cgColor
-        self.backgroundColor = backgroundColor
-        
-        self.setTitleColor(enabledColor, for: .normal)
+        self.setTitleColor(color, for: .normal)
         self.setTitleColor(disabledColor, for: .disabled)
         
-       // self.titleLabel?.font = UIFont(name: btnFont, size: 25)
-        self.titleLabel?.adjustsFontSizeToFitWidth = true
-        self.setTitle(self.titleLabel?.text?.capitalized, for: .normal)
-        
-        //self.contentEdgeInsets.bottom = 4
-        
+           
     }
+ 
+    
+
     
 }

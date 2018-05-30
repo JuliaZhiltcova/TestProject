@@ -9,15 +9,17 @@
 /* Begin PBXBuildFile section */
 		50820719F8AD79B67FE1F1AC /* Pods_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D1425C3574DF70DAF74640 /* Pods_Test.framework */; };
 		840DF5B420B8502A002DCC42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DF5B320B8502A002DCC42 /* AppDelegate.swift */; };
-		840DF5B620B8502A002DCC42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DF5B520B8502A002DCC42 /* ViewController.swift */; };
+		840DF5B620B8502A002DCC42 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DF5B520B8502A002DCC42 /* SignUpViewController.swift */; };
 		840DF5B920B8502A002DCC42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840DF5B720B8502A002DCC42 /* Main.storyboard */; };
 		840DF5BB20B8502A002DCC42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840DF5BA20B8502A002DCC42 /* Assets.xcassets */; };
 		840DF5BE20B8502A002DCC42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840DF5BC20B8502A002DCC42 /* LaunchScreen.storyboard */; };
+		8448A7BD20BD5CB20001A962 /* RestorePasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448A7BC20BD5CB20001A962 /* RestorePasswordButton.swift */; };
 		844C193220BBD71A00EABAD1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C193120BBD71A00EABAD1 /* CustomTextField.swift */; };
 		844C193420BBDAD500EABAD1 /* SFUIText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 844C193320BBDAD500EABAD1 /* SFUIText-Medium.otf */; };
 		844C193620BBDAF600EABAD1 /* SFUIText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 844C193520BBDAF600EABAD1 /* SFUIText-Regular.otf */; };
 		844C193920BBE69B00EABAD1 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C193820BBE69B00EABAD1 /* CustomButton.swift */; };
 		844C193D20BBE98F00EABAD1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C193C20BBE98F00EABAD1 /* Extensions.swift */; };
+		844C196120BC283700EABAD1 /* FirstScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C196020BC283700EABAD1 /* FirstScreenVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,16 +27,18 @@
 		7A1E0E482E47889D58019C80 /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
 		840DF5B020B8502A002DCC42 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840DF5B320B8502A002DCC42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		840DF5B520B8502A002DCC42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		840DF5B520B8502A002DCC42 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		840DF5B820B8502A002DCC42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		840DF5BA20B8502A002DCC42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		840DF5BD20B8502A002DCC42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		840DF5BF20B8502A002DCC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8448A7BC20BD5CB20001A962 /* RestorePasswordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestorePasswordButton.swift; sourceTree = "<group>"; };
 		844C193120BBD71A00EABAD1 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		844C193320BBDAD500EABAD1 /* SFUIText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Medium.otf"; sourceTree = "<group>"; };
 		844C193520BBDAF600EABAD1 /* SFUIText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Regular.otf"; sourceTree = "<group>"; };
 		844C193820BBE69B00EABAD1 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		844C193C20BBE98F00EABAD1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		844C196020BC283700EABAD1 /* FirstScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstScreenVC.swift; sourceTree = "<group>"; };
 		E2D1425C3574DF70DAF74640 /* Pods_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,18 +92,28 @@
 		840DF5B220B8502A002DCC42 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				844C196020BC283700EABAD1 /* FirstScreenVC.swift */,
+				840DF5B520B8502A002DCC42 /* SignUpViewController.swift */,
 				840DF5B320B8502A002DCC42 /* AppDelegate.swift */,
-				840DF5B520B8502A002DCC42 /* ViewController.swift */,
+				8448A7BE20BD65E50001A962 /* Custom UIComponents */,
 				840DF5B720B8502A002DCC42 /* Main.storyboard */,
-				844C193820BBE69B00EABAD1 /* CustomButton.swift */,
 				844C193C20BBE98F00EABAD1 /* Extensions.swift */,
 				844C193720BBDB0300EABAD1 /* Fonts */,
-				844C193120BBD71A00EABAD1 /* CustomTextField.swift */,
 				840DF5BA20B8502A002DCC42 /* Assets.xcassets */,
 				840DF5BC20B8502A002DCC42 /* LaunchScreen.storyboard */,
 				840DF5BF20B8502A002DCC42 /* Info.plist */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		8448A7BE20BD65E50001A962 /* Custom UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				8448A7BC20BD5CB20001A962 /* RestorePasswordButton.swift */,
+				844C193820BBE69B00EABAD1 /* CustomButton.swift */,
+				844C193120BBD71A00EABAD1 /* CustomTextField.swift */,
+			);
+			name = "Custom UIComponents";
 			sourceTree = "<group>";
 		};
 		844C193720BBDB0300EABAD1 /* Fonts */ = {
@@ -209,14 +223,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Test/Pods-Test-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -232,9 +242,11 @@
 			files = (
 				844C193D20BBE98F00EABAD1 /* Extensions.swift in Sources */,
 				844C193920BBE69B00EABAD1 /* CustomButton.swift in Sources */,
-				840DF5B620B8502A002DCC42 /* ViewController.swift in Sources */,
+				840DF5B620B8502A002DCC42 /* SignUpViewController.swift in Sources */,
 				840DF5B420B8502A002DCC42 /* AppDelegate.swift in Sources */,
+				8448A7BD20BD5CB20001A962 /* RestorePasswordButton.swift in Sources */,
 				844C193220BBD71A00EABAD1 /* CustomTextField.swift in Sources */,
+				844C196120BC283700EABAD1 /* FirstScreenVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

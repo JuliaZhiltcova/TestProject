@@ -10,18 +10,20 @@ import UIKit
 
 class CustomTextField: UITextField{
     
-    let floatingTitleLabelHeight = 15
-    let floatingTitleLabelUpOffset = 3
-    var bottomLineLayer = CALayer()
-    var title = UILabel()
+    private let titleLabelHeight = 15
+    private let hintLabelHeight = 10
+    private let floatingTitleLabelUpOffset = 3
+    private var bottomLineLayer = CALayer()
+    private var title = UILabel()
+    private var hint = UILabel()
     
-    var activeBottomLineColor = UIColor.blue
-    var inactiveBottomLineColor = UIColor.gray
-    var errorBottomLineColor:UIColor = UIColor.red
+    private var activeBottomLineColor = UIColor.blue
+    private var inactiveBottomLineColor = UIColor(red: 0xeb, green: 0xeb, blue: 0xeb)
     
-    var activeTitleLabelColor = UIColor.blue
-    var inactiveTitleLabelColor = UIColor.gray
-    var errorTitleLabelColor:UIColor = UIColor.red
+    private var activeTitleLabelColor = UIColor.blue
+    private var inactiveTitleLabelColor = UIColor(red: 0x79, green: 0x79, blue: 0x79)
+    
+    private var hintLabelColor = UIColor.red
     
     
     private var _pattern: String?
@@ -30,7 +32,17 @@ class CustomTextField: UITextField{
             return _pattern
         }
         set {
-            _pattern = pattern
+            _pattern = newValue
+        }
+    }
+    
+    private var _errorMessage: String?
+    var errorMessage: String? {
+        get {
+            return _errorMessage
+        }
+        set {
+            _errorMessage = newValue
         }
     }
     
@@ -40,7 +52,8 @@ class CustomTextField: UITextField{
             return _titleText
         }
         set{
-            _titleText = titleText
+            _titleText = newValue
+            title.text = _titleText
         }
     }
     
@@ -57,21 +70,28 @@ class CustomTextField: UITextField{
     fileprivate func setup() {
         borderStyle = UITextBorderStyle.none
         
+        title.text = _titleText
         title.alpha = 0
-        title.text = self.placeholder
-        title.font = UIFont(name: "Helvetica", size: 14)//titleFont
-        title.textColor = UIColor.gray//titleActiveTextColor
-        title.frame = CGRect(x:0, y: 0, width: Int(self.frame.size.width), height:floatingTitleLabelHeight)
+        title.font = UIFont(name: "SFUIText-Regular", size: 13)
+        title.textColor = inactiveTitleLabelColor
+        title.frame = CGRect(x:0, y: 0, width: Int(self.frame.size.width), height: titleLabelHeight)
         self.addSubview(title)
+    
+        hint.text = _errorMessage
+        hint.alpha = 0
+        hint.font = UIFont(name: "SFUIText-Regular", size: 10)
+        hint.textColor = hintLabelColor
         
-        bottomLineLayer.backgroundColor = UIColor.gray.cgColor  //red.cgColor.copy(alpha: 0.5)
-        bottomLineLayer.frame = CGRect(x: 0, y: self.frame.size.height - 1, width: self.frame.size.width, height: 1)
+        self.addSubview(hint)
+        
+        bottomLineLayer.backgroundColor = inactiveBottomLineColor.cgColor
         self.layer.addSublayer(bottomLineLayer)
-        
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        bottomLineLayer.frame = CGRect(x: 0, y: self.frame.size.height - 1, width: self.frame.size.width, height: 1)
+        hint.frame = CGRect(x: 0, y: self.frame.size.height, width: self.frame.size.width, height: CGFloat(hintLabelHeight) )
         
         
         if self.isFirstResponder {
@@ -82,37 +102,57 @@ class CustomTextField: UITextField{
         if !self.isFirstResponder {
             bottomLineLayer.backgroundColor = inactiveBottomLineColor.cgColor
             title.textColor = inactiveTitleLabelColor
+            if let userText = self.text, !userText.isEmpty && !isValid{
+                self.textColor = UIColor.red
+                showHintLabel()
+            }
+            if let userText = self.text, userText.isEmpty && !isValid || !userText.isEmpty && isValid  {
+                self.hideHintLabel()
+                self.textColor = UIColor(red: 0x33, green: 0x33, blue: 0x33)
+            }
             if let userText = self.text, userText.isEmpty {
                 hideTitleLabel()
+                self.textColor = UIColor(red: 0x33, green: 0x33, blue: 0x33)
             }
-            
         }
-        
+    }
+    
+
+    
+    var isValid: Bool{
+        get{
+            let regex = try! NSRegularExpression(pattern: _pattern!, options: [.caseInsensitive])
+            let range = NSMakeRange(0, (self.text?.characters.count)!)
+            return regex.firstMatch(in: self.text!, options: [], range: range) != nil
+        }
     }
     
     fileprivate func showTitleLabel() {
-        
         UIView.animate(withDuration: 0.2, delay:0, options: [.curveEaseOut], animations:{
-            
-            self.title.text = self.placeholder
+            self.title.text = self._titleText
             self.title.alpha = 1.0
-            self.title.frame = CGRect(x:0, y:-self.floatingTitleLabelHeight-self.floatingTitleLabelUpOffset, width: Int(self.frame.size.width), height:self.floatingTitleLabelHeight)
-            
-        }, completion:{ _ in
-            
+            self.title.frame = CGRect(x:0, y:-self.titleLabelHeight-self.floatingTitleLabelUpOffset, width: Int(self.frame.size.width), height:self.titleLabelHeight)
         })
     }
     
     fileprivate func hideTitleLabel(){
-        
         UIView.animate(withDuration: 0.2, delay:0, options: [.curveEaseOut], animations:{
-            
             self.title.alpha = 0.0
-            self.title.frame = CGRect(x:0, y: 0, width: Int(self.frame.size.width), height: self.floatingTitleLabelHeight)
-            
-        }, completion:{ _ in
-            
+            self.title.frame = CGRect(x:0, y: 0, width: Int(self.frame.size.width), height: self.titleLabelHeight)
         })
+    }
+    
+    fileprivate func showHintLabel(){
+        UIView.animate(withDuration: 0) { 
+            self.hint.text = self._errorMessage
+            self.hint.alpha = 1
+        }
+    }
+    
+    fileprivate func hideHintLabel(){
+        UIView.animate(withDuration: 0) { 
+            self.hint.alpha = 0
+        }
     }
     
     
