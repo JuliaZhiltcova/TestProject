@@ -121,8 +121,13 @@ class CustomTextField: UITextField{
     
     var isValid: Bool{
         get{
-            let regex = try! NSRegularExpression(pattern: _pattern!, options: [.caseInsensitive])
-            let range = NSMakeRange(0, (self.text?.characters.count)!)
+            guard let regex = try? NSRegularExpression(pattern: _pattern!, options: [.caseInsensitive]) else {
+                return false
+            }
+            guard let text_ = self.text else {
+                return false
+            }
+            let range = NSMakeRange(0, self.text!.characters.count)
             return regex.firstMatch(in: self.text!, options: [], range: range) != nil
         }
     }
