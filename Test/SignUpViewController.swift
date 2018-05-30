@@ -85,7 +85,7 @@ class SignUpViewController: UIViewController {
         emailTextField.pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         passwordTextField.pattern = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{6,}$"
         
-        //submitButton.isEnabled = false
+        submitButton.isEnabled = false
         
     }
     
